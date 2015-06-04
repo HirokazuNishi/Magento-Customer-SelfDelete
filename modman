@@ -1,5 +1,5 @@
 src/app/etc/modules/Rack_SelfDelete.xml app/etc/modules/Rack_SelfDelete.xml
 src/app/code/community/Rack/SelfDelete app/code/community/Rack/SelfDelete
-src/app/design/frontend/base/default/layout/selfdelete.xml app/design/frontend/base/default/layout/selfdelete.xml
+src/app/design/frontend/base/default/layout/rack_selfdelete.xml app/design/frontend/base/default/layout/rack_selfdelete.xml
 src/app/design/frontend/base/default/template/selfdelete app/design/frontend/base/default/template/selfdelete
 src/app/locale/ja_JP/Rack_SelfDelete.csv app/locale/ja_JP/Rack_SelfDelete.csv
