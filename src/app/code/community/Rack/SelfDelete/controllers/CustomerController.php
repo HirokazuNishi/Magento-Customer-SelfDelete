@@ -20,16 +20,21 @@ class Rack_SelfDelete_CustomerController extends Mage_Core_Controller_Front_Acti
         if (!$_customer->validatePassword($_post['password'])) {
             $this->_getSession()->addError(Mage::helper('selfdelete')->__('Password is incorrect.'));
             $this->_redirect('*/*/');
-        } else {
-            Mage::register('isSecureArea', true);
-            if($_customer->delete()) {
-                $this->_redirect('*/*/success');
-            } else {
-                $this->_getSession()->addError(Mage::helper('selfdelete')->__('Unable to delete your account'));
-                $this->_redirect('*/*/');
-            }
+            return;
         }
-        return;
+        try {
+            Mage::register('isSecureArea', true);
+            $_customer->delete();
+            Mage::unregister('isSecureArea');
+            $this->_redirect('*/*/success');
+            return;
+        } catch (Exception $e) {
+            Mage::unregister('isSecureArea');
+            Mage::logException($e);
+            $this->_getSession()->addError(Mage::helper('selfdelete')->__('Unable to delete your account'));
+            $this->_redirect('*/*/');
+            return;
+        }
     }
     
     public function successAction() 
