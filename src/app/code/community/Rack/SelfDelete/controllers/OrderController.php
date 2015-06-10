@@ -1,5 +1,5 @@
 <?php
-class Rack_Selfdelete_OrderController extends Mage_Core_Controller_Front_Action {
+class Rack_SelfDelete_OrderController extends Mage_Core_Controller_Front_Action {
 
 
     public function cancelAction() 
