@@ -104,7 +104,6 @@
   <default>
       <selfdelete>
           <selfdelete>
-              <candeletecustomer>false</candeletecustomer>
               <candeleteorder>false</candeleteorder>
           </selfdelete>
       </selfdelete>
